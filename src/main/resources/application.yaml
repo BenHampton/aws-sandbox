@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /api
+
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
+
+cloud:
+  aws:
+    region:
+      static: us-west-2
+      auto: false
+    stack:
+      auto: false
+    credentials:
+      access-key:
+      secret-key:
+    end-point:
+      uri: https://sqs.us-west-2.amazonaws.com/626315870368/testStandardQueue
